@@ -1,0 +1,5 @@
+mode=drun
+width=30%
+height=30%
+prompt=Search
+hide_scroll=true

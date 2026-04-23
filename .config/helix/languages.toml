@@ -1,0 +1,19 @@
+[[language]]
+name = "python"
+language-servers = ["ruff", "ty"]
+auto-format = true
+
+[[language]]
+name = "qml"
+language-servers = ["qmlls"]
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[language-server.ty]
+command = "ty"
+args = ["server"]
+
+[language-server.qmlls]
+command = "qmlls6"
