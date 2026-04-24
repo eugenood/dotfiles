@@ -29,7 +29,13 @@ def fetch_forecast(area_id):
     res = get_until_ok(
         "https://api-open.data.gov.sg/v2/real-time/api/two-hr-forecast"
     ).json()
-    return res["data"]["items"][0]["forecasts"][area_id]["forecast"]
+    forecast = res["data"]["items"][0]["forecasts"][area_id]["forecast"]
+    forecast = (
+        forecast.removesuffix(" (Day)")
+        .removesuffix(" (Night)")
+        .removesuffix(" with Gusty Winds")
+    )
+    return forecast
 
 
 def run(area_name):
