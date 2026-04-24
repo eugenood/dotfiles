@@ -3,12 +3,21 @@ import sys
 import time
 
 
+def get_until_ok(request_url, retry_interval=10):
+    while True:
+        try:
+            res = requests.get(request_url, headers={"User-Agent": "Mozilla/5.0"})
+        except requests.exceptions.ConnectionError:
+            print(flush=True)
+            time.sleep(retry_interval)
+            continue
+        return res
+
+
 def fetch_area_id(area_name):
-    req = requests.get(
-        "https://api-open.data.gov.sg/v2/real-time/api/two-hr-forecast",
-        headers={"User-Agent": "Mozilla/5.0"},
-    )
-    res = req.json()
+    res = get_until_ok(
+        "https://api-open.data.gov.sg/v2/real-time/api/two-hr-forecast"
+    ).json()
     areas = res["data"]["area_metadata"]
     for id, area in enumerate(areas):
         if area["name"] == area_name:
@@ -17,8 +26,9 @@ def fetch_area_id(area_name):
 
 
 def fetch_forecast(area_id):
-    req = requests.get("https://api-open.data.gov.sg/v2/real-time/api/two-hr-forecast")
-    res = req.json()
+    res = get_until_ok(
+        "https://api-open.data.gov.sg/v2/real-time/api/two-hr-forecast"
+    ).json()
     return res["data"]["items"][0]["forecasts"][area_id]["forecast"]
 
 

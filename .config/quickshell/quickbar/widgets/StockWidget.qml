@@ -12,12 +12,18 @@ Widget {
         running: true
         stdout: SplitParser {
             onRead: message => {
+                if (message === "") {
+                    root.price = 0.0
+                    root.visible = false
+                    return
+                }
                 const parts = message.split(",")
                 root.price = parts[0]
                 if (parts[1] > 0)
                     root.foregroundColor = "#a3be8c"
                 if (parts[1] < 0)
                     root.foregroundColor = "#bf616a"
+                root.visible = true
             }
         }
     }

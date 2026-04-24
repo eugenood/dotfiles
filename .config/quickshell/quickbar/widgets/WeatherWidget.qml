@@ -12,6 +12,12 @@ Widget {
         running: true
         stdout: SplitParser {
             onRead: message => {
+                if (message === "") {
+                    root.forecast = ""
+                    root.icon = ""
+                    root.visible = false
+                    return
+                }
                 root.forecast = message
                 root.icon = "󰖐"
                 if (message.includes("Rain") || message.includes("Shower")) {
@@ -21,6 +27,7 @@ Widget {
                     root.icon = "󰖐"
                     root.foregroundColor = "#d8dee9"
                 }
+                root.visible = true
             }
         }
     }

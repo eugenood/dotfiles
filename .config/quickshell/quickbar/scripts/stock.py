@@ -3,12 +3,21 @@ import sys
 import time
 
 
+def get_until_ok(request_url, retry_interval=10):
+    while True:
+        try:
+            res = requests.get(request_url, headers={"User-Agent": "Mozilla/5.0"})
+        except requests.exceptions.ConnectionError:
+            print(flush=True)
+            time.sleep(retry_interval)
+            continue
+        return res
+
+
 def fetch_price(ticker):
-    req = requests.get(
-        f"https://query2.finance.yahoo.com/v8/finance/chart/{ticker}",
-        headers={"User-Agent": "Mozilla/5.0"},
-    )
-    res = req.json()
+    res = get_until_ok(
+        f"https://query2.finance.yahoo.com/v8/finance/chart/{ticker}"
+    ).json()
     price = res["chart"]["result"][0]["meta"]["regularMarketPrice"]
     close = res["chart"]["result"][0]["meta"]["previousClose"]
     change = price - close
