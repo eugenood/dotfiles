@@ -25,6 +25,7 @@ Variants {
             VolumeWidget {}
             StockWidget { ticker: "VWRA.L" }
             WeatherWidget { areaName: "Paya Lebar" }
+            WifiWidget {}
             CpuWidget {}
             BatteryWidget {}
             DateWidget {}
