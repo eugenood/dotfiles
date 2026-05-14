@@ -3,7 +3,8 @@
 Personal dotfiles for [Everforest](https://github.com/sainnhe/everforest)-themed [Niri](https://github.com/niri-wm/niri) environment.
 
 <p align="center">
-  <video src="demo.mp4" width="800" autoplay loop muted>
+  <video 
+    src="https://github.com/user-attachments/assets/d40463f1-b591-4b17-a915-168afc43f69e" width="800" autoplay loop muted>
   </video>
 </p>
 
