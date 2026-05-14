@@ -1,0 +1,9 @@
+theme = "everforest_dark"
+
+[editor]
+line-number = "relative"
+trim-final-newlines = true
+trim-trailing-whitespace = true
+
+[editor.whitespace.render]
+tab = "all"

@@ -1,0 +1,68 @@
+input {
+    touchpad { tap; natural-scroll; disabled-on-external-mouse; }
+    trackpoint { off; }
+    focus-follows-mouse max-scroll-amount="0%"
+}
+
+output "eDP-1" {
+    mode "1920x1080@60"
+    scale 1.25
+    transform "normal"
+    position x=1280 y=0
+}
+
+include "binds.kdl"
+
+layout {
+    gaps 8
+    center-focused-column "never"
+    preset-column-widths { proportion 0.5; proportion 0.9; }
+    default-column-width { proportion 0.9; }
+    focus-ring { off; }
+    border { off; }
+}
+
+spawn-sh-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+
+spawn-sh-at-startup "quickshell -c quickbar"
+spawn-sh-at-startup "quickshell -c quickpaper"
+
+screenshot-path "~/Pictures/screenshots/%Y%m%d_%H%M%S.png"
+
+hotkey-overlay { skip-at-startup; }
+
+window-rule {
+    geometry-corner-radius 16
+    clip-to-geometry true
+}
+
+window-rule {
+    match app-id="kitty" is-focused=true
+    opacity 0.95
+    background-effect { blur true; }
+}
+
+window-rule {
+    match app-id="kitty" is-focused=false
+    opacity 0.80
+    background-effect { blur true; }
+}
+
+layer-rule {
+    match namespace="rofi"
+    geometry-corner-radius 16
+    background-effect { blur true; xray false; }
+}
+
+layer-rule {
+    match namespace="quickpaper-overview"
+    place-within-backdrop true
+}
+
+gestures {
+    hot-corners { off; }
+}
+
+recent-windows {
+    highlight { active-color "#2d353b"; corner-radius 16; }
+}

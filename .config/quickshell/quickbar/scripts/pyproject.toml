@@ -1,0 +1,16 @@
+[project]
+name = "quickbar-scripts"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "requests>=2.33.1",
+]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["ANN", "E", "F", "I", "W"]
+
+[tool.ruff.format]
+quote-style = "double"
