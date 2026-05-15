@@ -7,7 +7,7 @@
 
 * {
     background-color: transparent;
-    font: "JetBrainsMonoNL Nerd Font 12";
+    font: "JetBrainsMono Nerd Font 12";
     margin: 0px;
     padding: 0px;
     spacing: 0px;
@@ -31,12 +31,12 @@ inputbar {
 }
 
 prompt {
-    font: "JetBrainsMonoNL Nerd Font Light 18";
+    font: "JetBrainsMono Nerd Font Light 18";
     text-color: var(theme-foreground-color);
 }
 
 entry {
-    font: "JetBrainsMonoNL Nerd Font Bold 18";
+    font: "JetBrainsMono Nerd Font Bold 18";
     placeholder: "Search";
     placeholder-color: var(theme-foreground-color);
     text-color: var(theme-foreground-color);

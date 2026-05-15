@@ -19,6 +19,9 @@ ShellRoot {
             LockSurface {
                 anchors.fill: parent
                 context: lockContext
+                normalBackgroundColor: "#425047"
+                failureBackgroundColor: "#514045"
+                foregroundColor: "#d3c6aa"
             }
         }
     }

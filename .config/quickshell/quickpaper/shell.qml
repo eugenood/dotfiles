@@ -10,20 +10,34 @@ ShellRoot {
                 {
                     screen: modelData,
                     context: "desktop",
-                    filename: "default.png"
+                    imageSource: "assets/main.png",
+                    backgroundColor: "#425047",
+                    foregroundColor: "#d3c6aa",
+                    imageBlurEnabled: true,
+                    clockBlurEnabled: false,
+                    clockEnabled: true,
                 },
                 {
                     screen: modelData,
                     context: "overview",
-                    filename: "blurred.png"
+                    imageSource: "assets/main.png",
+                    backgroundColor: "#232a2e",
+                    foregroundColor: "#d3c6aa",
+                    imageBlurEnabled: true,
+                    clockBlurEnabled: false,
+                    clockEnabled: false,
                 }
             ]
             WallpaperWindow {
                 required property var modelData
                 screen: modelData.screen
                 context: modelData.context
-                filename: modelData.filename
-                directory: Quickshell.env("HOME") + "/.config/wallpapers/"
+                imageSource: modelData.imageSource
+                backgroundColor: modelData.backgroundColor
+                foregroundColor: modelData.foregroundColor
+                imageBlurEnabled: modelData.imageBlurEnabled
+                clockBlurEnabled: modelData.clockBlurEnabled
+                clockEnabled: modelData.clockEnabled
             }
         }
     }

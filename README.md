@@ -2,12 +2,6 @@
 
 Personal dotfiles for [Everforest](https://github.com/sainnhe/everforest)-themed [Niri](https://github.com/niri-wm/niri) environment.
 
-<p align="center">
-  <video 
-    src="https://github.com/user-attachments/assets/d40463f1-b591-4b17-a915-168afc43f69e" width="800" autoplay loop muted>
-  </video>
-</p>
-
 ## Features
 
 - Custom-made status bar, lock screen, and wallpaper engine using [Quickshell](https://quickshell.org/).
@@ -30,6 +24,7 @@ These packages are required for the fonts and icons to render correctly in the s
 - `quickshell`
 - `noto-fonts`
 - `ttf-jetbrains-mono-nerd`
+- `swayidle`
 
 ## Firefox Theme
 
