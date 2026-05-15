@@ -2,6 +2,10 @@
 
 Personal dotfiles for [Everforest](https://github.com/sainnhe/everforest)-themed [Niri](https://github.com/niri-wm/niri) environment.
 
+https://github.com/user-attachments/assets/68aa7c58-89fc-442d-b51d-22dbbf5434a0
+
+https://github.com/user-attachments/assets/0fc1e311-c4d8-4152-ae35-1ea8f33f31ee
+
 ## Features
 
 - Custom-made status bar, lock screen, and wallpaper engine using [Quickshell](https://quickshell.org/).
