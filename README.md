@@ -4,7 +4,7 @@ Personal dotfiles for [Everforest](https://github.com/sainnhe/everforest)-themed
 
 https://github.com/user-attachments/assets/68aa7c58-89fc-442d-b51d-22dbbf5434a0
 
-https://github.com/user-attachments/assets/0fc1e311-c4d8-4152-ae35-1ea8f33f31ee
+https://github.com/user-attachments/assets/6abd9ff2-406c-457d-acc8-a5645f5d67e9
 
 ## Features
 
